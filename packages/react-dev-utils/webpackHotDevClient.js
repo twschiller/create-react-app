@@ -63,8 +63,7 @@ var connection = new SockJS(
     protocol: window.location.protocol,
     hostname: window.location.hostname,
     port: window.location.port,
-    // Hardcoded in WebpackDevServer
-    pathname: '/sockjs-node',
+    pathname: process.env.WDS_SOCKET_PATH || '/sockjs-node',
   })
 );
 
