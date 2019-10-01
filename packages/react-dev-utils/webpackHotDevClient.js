@@ -61,8 +61,8 @@ if (module.hot && typeof module.hot.dispose === 'function') {
 var connection = new SockJS(
   url.format({
     protocol: window.location.protocol,
-    hostname: window.location.hostname,
-    port: window.location.port,
+    hostname: process.env.WDS_SOCKET_HOST || window.location.hostname,
+    port: process.env.WDS_SOCKET_PORT || window.location.port,
     pathname: process.env.WDS_SOCKET_PATH || '/sockjs-node',
   })
 );
